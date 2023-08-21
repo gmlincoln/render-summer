@@ -38,9 +38,9 @@ function itemCalculation(data) {
 
     }
     totalPrice = itemsTotalPrice;
-    totalPrices.innerText = totalPrice;
+    totalPrices.innerText = totalPrice.toFixed(2);
     const productPrice = document.getElementById('products-price');
-    productPrice.innerText = parseFloat(itemsTotalPrice);
+    productPrice.innerText = itemsTotalPrice.toFixed(2);
 }
 
 // Coupon Code Button Given Message
@@ -62,9 +62,9 @@ document.getElementById('coupon-btn').addEventListener('click', function () {
     if (couponFieldValue === 'SELL200') {
         discountPrice = parseFloat((itemsTotalPrice * 20) / 100);
         const discount = document.getElementById('discount-price');
-        discount.innerText = discountPrice;
+        discount.innerText = discountPrice.toFixed(2);
         totalPrice = parseFloat(itemsTotalPrice - discountPrice);
-        totalPrices.innerText = totalPrice;
+        totalPrices.innerText = totalPrice.toFixed(2);
         couponField.value = '';
     }
     else {
